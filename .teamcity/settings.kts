@@ -954,6 +954,7 @@ object RunCanaryE2eTests : BuildType({
 
 	failureConditions {
 		executionTimeoutMin = 20
+		supportTestRetry = true
 	}
 
 	dependencies {
