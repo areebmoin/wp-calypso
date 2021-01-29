@@ -311,3 +311,11 @@ function load_coming_soon() {
 	}
 }
 add_action( 'plugins_loaded', __NAMESPACE__ . '\load_coming_soon' );
+
+/**
+ * Error reporting for wp-admin / Gutenberg
+ */
+function load_error_reporting() {
+	require_once __DIR__ . '/error-reporting/index.php';
+}
+add_action( 'plugins_loaded', __NAMESPACE__ . '\load_error_reporting' );
