@@ -132,6 +132,7 @@
 		"@wordpress/scripts": "^12.5.0",
 		"@wordpress/server-side-render": "^1.20.1",
 		"@wordpress/url": "*",
+		"calypso": "^1.0.0",
 		"classnames": "^2.2.6",
 		"emotion-theming": "^10.0.27",
 		"enzyme": "^3.11.0",
