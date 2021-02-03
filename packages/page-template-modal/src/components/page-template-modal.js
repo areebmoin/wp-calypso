@@ -7,7 +7,6 @@ import classnames from 'classnames';
 import { Button, Modal, Spinner, IconButton } from '@wordpress/components';
 import { Component } from '@wordpress/element';
 import { parse as parseBlocks } from '@wordpress/blocks';
-import React from 'react';
 
 /**
  * Internal dependencies
