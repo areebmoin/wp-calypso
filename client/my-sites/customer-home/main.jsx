@@ -2,7 +2,7 @@
  * External dependencies
  */
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { useTranslate } from 'i18n-calypso';
 import { flowRight } from 'lodash';
@@ -49,6 +49,18 @@ const Home = ( {
 	const translate = useTranslate();
 	const reduxDispatch = useDispatch();
 
+	useEffect( () => {
+		if ( ! canUserUseCustomerHome || ! layout || noticeType !== 'purchase-success' ) {
+			return;
+		}
+		const successMessage = translate( 'Your purchase has been completed!' );
+		reduxDispatch(
+			successNotice( successMessage, {
+				isPersistent: true,
+			} )
+		);
+	}, [ noticeType, layout, reduxDispatch, translate ] );
+
 	if ( ! canUserUseCustomerHome ) {
 		const title = translate( 'This page is not available on this site.' );
 		return (
@@ -56,15 +68,6 @@ const Home = ( {
 				title={ preventWidows( title ) }
 				illustration="/calypso/images/illustrations/error.svg"
 			/>
-		);
-	}
-
-	if ( 'purchase-success' === noticeType && layout ) {
-		const successMessage = translate( 'Your purchase has been completed!' );
-		reduxDispatch(
-			successNotice( successMessage, {
-				isPersistent: true,
-			} )
 		);
 	}
 
