@@ -449,7 +449,7 @@ describe( 'getThankYouPageUrl', () => {
 			siteSlug: 'foo.bar',
 			cart,
 			getUrlFromCookie,
-			isEligibleForSignupDestination: false,
+			isEligibleForSignupDestinationResult: false,
 		} );
 		expect( url ).toBe( '/checkout/thank-you/foo.bar/:receiptId' );
 	} );
@@ -479,7 +479,7 @@ describe( 'getThankYouPageUrl', () => {
 			siteSlug: 'foo.bar',
 			cart,
 			getUrlFromCookie,
-			isEligibleForSignupDestination: true,
+			isEligibleForSignupDestinationResult: true,
 		} );
 		expect( url ).toBe( '/cookie' );
 	} );
