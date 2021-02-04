@@ -139,7 +139,8 @@ function PendingGSuiteTosNoticeDialog( props ) {
 	return (
 		<Dialog className="domain-warnings__dialog" isVisible={ props.visible }>
 			<header>
-				<h1>{ translate( 'Log in to G Suite to finish setup' ) }</h1>
+				<h1>{ translate( 'Log in to Google Admin to finish setup' ) }</h1>
+
 				<button onClick={ onCloseClick }>
 					<Gridicon icon="cross" />
 				</button>
